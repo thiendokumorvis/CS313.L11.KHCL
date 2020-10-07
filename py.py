@@ -1,59 +1,88 @@
 import pandas as pd
 import argparse
 
+#Find most frequent element in a list
+def most_frequent(List): 
+  counter = 0
+  num = List[0]
+  for i in List:
+    curr_frequency = List.count(i)
+    if(curr_frequency > counter):
+      counter = curr_frequency
+      num = i
+  return num
 
-#df = pd.read_csv('dataset/flag_with_attributes.data')
-# df = pd.read_csv(args._input_)
-# df.iloc[:,0]
+#Get features' types of the dataframe
+def get_features_type(self):
+  features_type = []
+  #fill features' type
+  for i in range(self.shape[1]):
+    for j in range(self.shape[0]):
+      if self.iloc[j, i] != '?':
+        try:
+          int(self.iloc[j, i])
+          features_type.append("numberic")
+          break
+        except:
+          features_type.append("nominal")
+          break
+  return features_type
 
-def most_frequent(List):
-    counter = 0
-    num = List[0]
-    for i in List:
-        curr_frequency = List.count(i)
-        if curr_frequency > counter:
-            counter = curr_frequency
-            num = i
-    return num
+#Log contains missing attributes, output is the dataframe after being filled
+class replaced_data:
+  def __init__(self, log, output):
+    self.log = log
+    self.output = output
 
-
-# wrong
-def fill_data(df):
-    index = []
-    sum = 0
-    attribute_type = []
-    # fill attribute type
-    for i in range(df.shape[1]):
-        for j in range(df.shape[0]):
-            if df.iloc[j, i] != '?':
-                try:
-                    int(df.iloc[j, i])
-                    attribute_type.append("numberic")
-                    break
-                except:
-                    attribute_type.append("nominal")
-                    break
-    # fill data
-    for i in range(df.shape[1]):
-        if attribute_type[i] == "nominal":
-            mfr = most_frequent(list(df.iloc[:, i]))
-            for j in range(df.shape[0]):
-                if df.iloc[j, i] == '?':
-                    df.iloc[j, i] = mfr
+#Return processed data and log, hand-coded, may be changed later
+def fill_data(self):
+  data = self.copy()
+  index = []
+  sum = 0
+  log = ''
+  features_type = get_features_type(data)
+  #fill data
+  for i in range(data.shape[1]):
+    missing_count = 0
+    if features_type[i] == "nominal":
+      mfr = most_frequent(list(data.iloc[:,i]))
+      for j in range(data.shape[0]):
+        if data.iloc[j, i] == '?':
+          data.iloc[j, i] = mfr
+          missing_count += 1
+      log = log + str(data.columns[i]) + '\t' + str(missing_count) + '\t' + mfr + '\n'
+    else:
+      sum = 0
+      index = []
+      for j in range(data.shape[0]):
+        if data.iloc[j, i] != '?':
+          sum += float(data.iloc[j, i])
         else:
-            sum = 0
-            index = []
-            for j in range(df.shape[0]):
-                if df.iloc[j, i] != '?':
-                    sum += float(df.iloc[j, i])
-                else:
-                    index.append(j)
-                avg = sum / df.shape[0]
-                for k in range(len(index)):
-                    df.iloc[k, i] = avg
-    print(attribute_type)
-    return df
+          missing_count += 1
+          index.append(j)
+        avg = sum / data.shape[0]
+        for k in range(len(index)):
+          data.iloc[k, i] = avg
+      log = log + str(data.columns[i]) + '\t' + str(missing_count) + '\t' + str(avg) + '\n'
+  return replaced_data(log, data)
 
+#Functions
+#Summary
+def summarize_data(self, log_path):
+  types = get_features_type(self)
+  log = str(self.shape[0]) + '\n' + str(self.shape[1]) + '\n'
+  for i in range(self.shape[1]):
+    log = log + str(self.columns[i]) + '\t' + types[i] + '\n'
+  log_file = open(log_path, "w+")
+  log_file.write(log)
+  log_file.close()
+#Replace
+def replace_data(self, log_path, output_path):
+  data = fill_data(self)
+  log_file = open(log_path, "w+")
+  log_file.write(data.log)
+  log_file.close()
+  data.output.to_csv(output_path, index = False)
 
 parser = argparse.ArgumentParser(description="Bai TH 1")
 group = parser.add_mutually_exclusive_group()
