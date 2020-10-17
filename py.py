@@ -20,8 +20,8 @@ def get_features_type(self):
     for j in range(self.shape[0]):
       if self.iloc[j, i] != '?':
         try:
-          int(self.iloc[j, i])
-          features_type.append("numberic")
+          float(self.iloc[j, i])
+          features_type.append("numeric")
           break
         except:
           features_type.append("nominal")
