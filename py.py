@@ -15,7 +15,7 @@ def most_frequent(List):
 #Get features' types of the dataframe
 def get_features_type(self):
   features_type = []
-  #fill features' type
+  #fill features' types
   for i in range(self.shape[1]):
     for j in range(self.shape[0]):
       if self.iloc[j, i] != '?':
@@ -62,7 +62,7 @@ def fill_data(self):
           index.append(j)
         avg = sum / data.shape[0]
         for k in range(len(index)):
-          data.iloc[k, i] = avg
+          data.iloc[index[k], i] = avg
       log = log + str(data.columns[i]) + '\t' + str(missing_count) + '\t' + str(avg) + '\n'
   return replaced_data(log, data)
 
@@ -104,7 +104,7 @@ elif args.summary:
 elif args.replace:
     df = pd.read_csv(args.input)
     df.iloc[:, 0]
-    print(fill_data(df))
+    replace_data(df, args.log, args.output)
 elif args.discretize:
     print(0)
 elif args.normalize:
