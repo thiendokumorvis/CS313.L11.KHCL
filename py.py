@@ -1,7 +1,8 @@
 import pandas as pd
 import argparse
+import math
 
-#Find most frequent element in a list
+# Find most frequent element in a list
 def most_frequent(List): 
   counter = 0
   num = List[0]
@@ -12,10 +13,10 @@ def most_frequent(List):
       num = i
   return num
 
-#Get features' types of the dataframe
+# Get features' types of the dataframe
 def get_features_type(self):
   features_type = []
-  #fill features' types
+  # Fill features' types
   for i in range(self.shape[1]):
     for j in range(self.shape[0]):
       if self.iloc[j, i] != '?':
@@ -28,20 +29,14 @@ def get_features_type(self):
           break
   return features_type
 
-#Log contains missing attributes, output is the dataframe after being filled
-class replaced_data:
-  def __init__(self, log, output):
-    self.log = log
-    self.output = output
-
-#Return processed data and log, hand-coded, may be changed later
+# Return processed data and log, hand-coded, may be changed later
 def fill_data(self):
   data = self.copy()
   index = []
   sum = 0
   log = ''
   features_type = get_features_type(data)
-  #fill data
+  # Fill data
   for i in range(data.shape[1]):
     missing_count = 0
     if features_type[i] == "nominal":
@@ -50,7 +45,8 @@ def fill_data(self):
         if data.iloc[j, i] == '?':
           data.iloc[j, i] = mfr
           missing_count += 1
-      log = log + str(data.columns[i]) + '\t' + str(missing_count) + '\t' + mfr + '\n'
+      if missing_count != 0:
+        log = log + str(data.columns[i]) + '\t' + str(missing_count) + '\t' + mfr + '\n'
     else:
       sum = 0
       index = []
@@ -63,11 +59,12 @@ def fill_data(self):
         avg = sum / data.shape[0]
         for k in range(len(index)):
           data.iloc[index[k], i] = avg
-      log = log + str(data.columns[i]) + '\t' + str(missing_count) + '\t' + str(avg) + '\n'
-  return replaced_data(log, data)
+      if missing_count != 0:
+        log = log + str(data.columns[i]) + '\t' + str(missing_count) + '\t' + str(avg) + '\n'
+  return log, data
 
-#Functions
-#Summary
+# Functions
+# Summary
 def summarize_data(self, log_path):
   types = get_features_type(self)
   log = str(self.shape[0]) + '\n' + str(self.shape[1]) + '\n'
@@ -76,13 +73,46 @@ def summarize_data(self, log_path):
   log_file = open(log_path, "w+")
   log_file.write(log)
   log_file.close()
-#Replace
+# Replace
 def replace_data(self, log_path, output_path):
-  data = fill_data(self)
+  log, data = fill_data(self)
   log_file = open(log_path, "w+")
-  log_file.write(data.log)
+  log_file.write(log)
   log_file.close()
-  data.output.to_csv(output_path, index = False)
+  data.to_csv(output_path, index = False)
+# Normalize
+def normalize_z_score(self):
+  data = self.copy()
+  N = data.shape[0]
+  features_type = get_features_type(data)
+  for i in range(data.shape[1]):
+    if features_type[i] == 'numeric':
+      sum = 0
+      for j in range(N):
+        sum += float(data.iloc[j, i])
+      avg = sum / N
+      variance = 0
+      for j in range(N):
+        variance += (float(data.iloc[j, i]) - avg)**2
+      variance = math.sqrt(variance / N)
+      for j in range(N):
+        data.iloc[j, i] = ((data.iloc[j, i]) - avg) / variance
+  # return dataframe
+  return data
+
+def normalize_minmax(self):
+  data = self.copy()
+  features_type = get_features_type(data)
+  for i in range(data.shape[1]):
+    if features_type[i] == 'numeric':
+      minA = min(list(data.iloc[:, i].values))
+      maxA = max(list(data.iloc[:, i].values))
+      for j in range(data.shape[0]):
+        data.iloc[j, i] = (data.iloc[j, i] - minA) / (maxA - minA)
+  # return dataframe
+  return data
+
+# Save normalized dataframe: pd.read_csv('output_path')
 
 parser = argparse.ArgumentParser(description="Bai TH 1")
 group = parser.add_mutually_exclusive_group()
