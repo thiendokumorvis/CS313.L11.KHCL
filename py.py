@@ -45,7 +45,7 @@ def fill_data(self):
         if data.iloc[j, i] == '?':
           data.iloc[j, i] = mfr
           missing_count += 1
-      if missing_count != 0:
+      if missing_count > 0:
         log = log + str(data.columns[i]) + '\t' + str(missing_count) + '\t' + mfr + '\n'
     else:
       sum = 0
@@ -59,7 +59,7 @@ def fill_data(self):
         avg = sum / data.shape[0]
         for k in range(len(index)):
           data.iloc[index[k], i] = avg
-      if missing_count != 0:
+      if missing_count > 0:
         log = log + str(data.columns[i]) + '\t' + str(missing_count) + '\t' + str(avg) + '\n'
   return log, data
 
