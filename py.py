@@ -84,6 +84,7 @@ def replace_data(self, log_path, output_path):
 def normalize_z_score(self):
   data = self.copy()
   N = data.shape[0]
+  log = ''
   features_type = get_features_type(data)
   for i in range(data.shape[1]):
     if features_type[i] == 'numeric':
@@ -97,11 +98,13 @@ def normalize_z_score(self):
       variance = math.sqrt(variance / N)
       for j in range(N):
         data.iloc[j, i] = ((data.iloc[j, i]) - avg) / variance
-  # return dataframe
-  return data
+      log = log + str(data.columns[i]) + '\t' + str(min(list(data.iloc[:, i].values))) + '\t' + str(max(list(data.iloc[:, i].values))) + '\n'
+  # return log, dataframe
+  return log, data
 
 def normalize_minmax(self):
   data = self.copy()
+  log = ''
   features_type = get_features_type(data)
   for i in range(data.shape[1]):
     if features_type[i] == 'numeric':
@@ -109,8 +112,23 @@ def normalize_minmax(self):
       maxA = max(list(data.iloc[:, i].values))
       for j in range(data.shape[0]):
         data.iloc[j, i] = (data.iloc[j, i] - minA) / (maxA - minA)
-  # return dataframe
-  return data
+      log = log + str(data.columns[i]) + '\t' + str(min(list(data.iloc[:, i].values))) + '\t' + str(max(list(data.iloc[:, i].values))) + '\n'
+  # return log, dataframe
+  return log, data
+
+def normalize_data_w_z_score(self, log_path, output_path):
+  log, data = normalize_z_score(self)
+  log_file = open(log_path, "w+")
+  log_file.write(log)
+  log_file.close()
+  data.to_csv(output_path, index = False)
+
+def normalize_data_w_minmax(self, log_path, output_path):
+  log, data = normalize_minmax(self)
+  log_file = open(log_path, "w+")
+  log_file.write(log)
+  log_file.close()
+  data.to_csv(output_path, index = False)
 
 # Save normalized dataframe: pd.read_csv('output_path')
 
