@@ -1,0 +1,8 @@
+100
+6
+Whether_of_not_the_TA_is_a_native_English_speaker	nominal
+Course_intructor	nominal
+Course	nominal
+Summer_or_regular_semester	nominal
+Class_size	numeric
+Class_attribute	nominal

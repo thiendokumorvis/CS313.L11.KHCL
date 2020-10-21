@@ -1,0 +1,101 @@
+Wife's_age,Wife's_education,Husband's_education,Number_of_children_ever_born,Wife's_religion,Wife's_now_working?,Husband's_occupation,Standard_of_living_index,Media_exposure,Contraceptive_method_used
+24,Low-2,High-3,3,Islam,No,Low-2,High-3,Good,No-use
+45,Low-1,High-3,10,Islam,No,High-3,High-4,Good,No-use
+43,Low-2,High-3,7,Islam,No,High-3,High-4,Good,No-use
+42,High-3,Low-2,9,Islam,No,High-3,High-3,Good,No-use
+36,High-3,High-3,8,Islam,No,High-3,Low-2,Good,No-use
+19,High-4,High-4,0,Islam,No,High-3,High-3,Good,No-use
+38,Low-2,High-3,6,Islam,No,High-3,Low-2,Good,No-use
+21,High-3,High-3,1,Islam,Yes,High-3,Low-2,Good,No-use
+27,Low-2,High-3,3,Islam,No,High-3,High-4,Good,No-use
+45,Low-1,Low-1,8,Islam,No,Low-2,Low-2,Not good,No-use
+38,Low-1,High-3,2,Islam,Yes,High-3,High-3,Not good,No-use
+42,Low-1,High-4,4,Islam,No,Low-1,High-3,Good,No-use
+44,High-4,High-4,1,Islam,Yes,Low-1,High-4,Good,No-use
+42,Low-2,High-4,1,Islam,Yes,High-3,High-3,Good,No-use
+34,High-4,High-4,2,Non-Islam,No,Low-1,High-4,Good,No-use
+34,High-4,High-4,2,Islam,Yes,Low-1,High-3,Good,No-use
+23,High-4,High-4,2,Islam,No,Low-1,High-4,Good,No-use
+27,High-4,High-4,1,Islam,No,Low-1,Low-2,Good,No-use
+46,High-3,Low-2,11,Islam,Yes,Low-2,Low-2,Not good,No-use
+34,High-4,High-4,3,Non-Islam,No,Low-1,Low-2,Good,No-use
+33,High-4,High-4,5,Islam,No,High-3,High-3,Good,No-use
+25,High-3,High-3,1,Islam,No,High-3,Low-2,Good,No-use
+26,High-4,High-4,1,Islam,Yes,Low-1,High-4,Good,No-use
+48,Low-1,High-3,4,Islam,No,High-3,High-3,Not good,No-use
+36,High-4,High-4,2,Islam,No,High-3,High-3,Good,No-use
+38,High-3,High-4,2,Non-Islam,No,Low-2,High-4,Good,No-use
+44,Low-1,Low-2,7,Islam,No,High-3,High-4,Good,No-use
+44,Low-2,Low-2,1,Islam,Yes,High-3,Low-2,Good,No-use
+39,High-3,High-3,1,Non-Islam,No,High-3,High-4,Good,No-use
+43,High-4,High-4,3,Non-Islam,No,Low-1,High-4,Good,Long-term
+35,High-4,High-4,3,Islam,No,Low-2,High-3,Good,Long-term
+24,High-4,High-4,2,Islam,Yes,Low-1,High-3,Good,Long-term
+43,High-4,High-4,6,Islam,No,Low-1,High-4,Good,Long-term
+48,High-4,High-4,7,Non-Islam,No,Low-1,High-4,Good,Long-term
+28,High-4,High-4,2,Islam,No,Low-1,High-3,Good,Long-term
+24,High-4,High-4,1,Islam,No,Low-1,High-4,Good,Long-term
+42,High-4,High-4,3,Islam,Yes,Low-1,High-4,Good,Long-term
+39,High-4,High-4,3,Islam,No,Low-1,High-4,Good,Long-term
+24,High-4,High-4,1,Islam,No,Low-1,High-4,Good,Long-term
+33,High-4,High-3,5,Islam,No,Low-2,High-4,Good,Long-term
+29,High-4,High-4,2,Islam,No,High-3,High-4,Good,Long-term
+26,High-3,High-4,2,Islam,No,Low-1,High-3,Good,Short-term
+25,High-3,High-3,3,Islam,No,High-3,High-3,Good,Short-term
+35,High-4,High-4,3,Islam,No,Low-1,High-4,Good,Short-term
+22,High-4,High-4,1,Islam,Yes,Low-2,High-4,Good,Short-term
+19,High-4,High-4,1,Islam,No,Low-2,High-4,Good,Short-term
+29,Low-2,High-3,5,Islam,No,Low-2,High-4,Good,Short-term
+21,High-3,High-4,2,Islam,No,High-3,High-3,Good,Short-term
+21,High-3,High-3,1,Islam,No,High-3,High-3,Good,Short-term
+41,Low-1,High-4,9,Islam,No,Low-2,Low-1,Good,Short-term
+37,Low-2,High-4,3,Islam,No,Low-2,High-3,Good,Short-term
+27,High-4,High-4,3,Islam,No,High-3,High-4,Not good,Short-term
+26,Low-2,High-3,2,Islam,No,Low-2,High-3,Good,Short-term
+37,High-4,High-4,6,Islam,Yes,High-3,High-4,Good,Short-term
+25,High-3,High-3,3,Islam,No,Low-2,Low-1,Good,Short-term
+32,High-4,High-3,3,Islam,No,Low-2,High-4,Good,Short-term
+34,Low-1,High-4,4,Islam,No,High-3,High-4,Not good,Short-term
+23,High-4,High-4,2,Islam,Yes,Low-2,High-4,Good,Short-term
+28,High-3,High-4,2,Islam,No,High-3,High-4,Good,Short-term
+30,High-3,High-3,4,Islam,Yes,Low-2,Low-2,Good,Short-term
+31,High-4,High-4,3,Islam,Yes,Low-1,High-4,Good,Short-term
+35,High-3,High-4,5,Islam,No,Low-1,High-4,Good,Short-term
+38,High-4,High-4,2,Islam,No,High-3,High-4,Good,Short-term
+31,High-4,High-4,1,Islam,No,Low-1,High-4,Good,Short-term
+25,High-4,High-4,2,Islam,No,Low-2,High-4,Good,Short-term
+30,High-4,High-4,2,Islam,No,Low-1,High-4,Good,Short-term
+22,Low-1,Low-2,2,Islam,No,High-3,High-4,Good,Short-term
+31,High-4,High-4,3,Islam,No,Low-1,High-4,Good,Short-term
+29,High-4,High-4,3,Islam,No,High-3,High-4,Good,Short-term
+29,Low-2,High-3,3,Islam,Yes,High-3,Low-2,Good,Short-term
+38,High-4,High-4,3,Non-Islam,Yes,High-3,High-3,Not good,Short-term
+22,High-3,High-4,2,Islam,No,Low-2,High-4,Good,Short-term
+45,High-4,High-4,3,Islam,No,Low-1,High-4,Good,Short-term
+26,High-3,High-4,3,Islam,No,High-3,Low-2,Good,Short-term
+20,High-4,High-4,0,Non-Islam,Yes,Low-2,High-4,Good,No-use
+31,High-3,High-4,3,Non-Islam,Yes,Low-2,High-4,Good,No-use
+36,High-3,High-3,3,Non-Islam,Yes,Low-2,High-3,Not good,No-use
+47,High-3,Low-2,5,Islam,No,High-4,High-4,Good,No-use
+43,High-3,High-4,2,Non-Islam,No,High-3,High-4,Good,No-use
+20,High-3,High-4,0,Islam,No,High-3,High-3,Good,No-use
+24,High-4,High-4,4,Islam,No,Low-1,High-4,Good,No-use
+33,Low-2,Low-2,3,Non-Islam,Yes,Low-2,High-4,Good,No-use
+41,High-3,High-4,3,Non-Islam,No,Low-2,High-4,Good,No-use
+48,High-3,High-4,4,Non-Islam,No,Low-2,High-4,Good,No-use
+32,High-4,High-4,1,Non-Islam,No,Low-1,High-4,Good,No-use
+38,High-3,High-3,4,Non-Islam,Yes,High-3,Low-2,Not good,No-use
+48,High-3,High-4,8,Islam,No,High-3,High-3,Good,No-use
+34,Low-1,High-3,4,Islam,Yes,High-3,High-4,Good,No-use
+31,Low-1,Low-1,6,Islam,No,High-3,Low-2,Good,No-use
+46,Low-1,Low-2,7,Islam,No,High-3,Low-1,Not good,No-use
+45,Low-2,Low-2,7,Islam,No,High-3,Low-1,Not good,No-use
+30,Low-2,High-3,7,Islam,No,High-3,High-3,Good,Short-term
+17,High-3,High-4,1,Islam,No,High-3,High-3,Good,Short-term
+32,Low-2,High-4,3,Islam,No,High-3,High-4,Good,Short-term
+43,High-4,High-4,5,Non-Islam,No,Low-1,High-4,Good,Short-term
+31,Low-2,Low-2,4,Islam,No,High-3,High-3,Good,Short-term
+24,Low-1,Low-2,3,Islam,No,High-3,Low-2,Good,Short-term
+26,Low-2,High-4,3,Islam,No,Low-1,High-3,Good,Short-term
+35,High-3,High-4,4,Islam,Yes,Low-1,High-4,Good,Short-term
+46,High-3,High-4,4,Islam,Yes,High-3,High-4,Good,Short-term

@@ -1,0 +1,6 @@
+temperature_of_patient	3	32.865
+lumbar_pain	3	yes
+urine_pushing	1	yes
+micturition_pains	4	no
+burning_of_urethra_itch_swelling_of_urethra_outlet	2	no
+decision_nephritis_of_renal_pelvis_origin 	1	no

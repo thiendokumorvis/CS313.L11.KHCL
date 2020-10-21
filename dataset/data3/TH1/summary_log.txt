@@ -1,0 +1,12 @@
+20
+10
+Wife's_age	numeric
+Wife's_education	nominal
+Husband's_education	nominal
+Number_of_children_ever_born	numeric
+Wife's_religion	nominal
+Wife's_now_working?	nominal
+Husband's_occupation	nominal
+Standard_of_living_index	nominal
+Media_exposure	nominal
+Contraceptive_method_used	nominal

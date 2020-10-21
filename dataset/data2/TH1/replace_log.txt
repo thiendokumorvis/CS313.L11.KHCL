@@ -1,0 +1,6 @@
+Whether_of_not_the_TA_is_a_native_English_speaker	3	non-English speaker
+Course_intructor	1	cat-14
+Course	3	cat-15
+Summer_or_regular_semester	2	Regular
+Class_size	3	28.7
+Class_attribute	1	Low

@@ -1,0 +1,21 @@
+Wife's_age,Wife's_education,Husband's_education,Number_of_children_ever_born,Wife's_religion,Wife's_now_working?,Husband's_occupation,Standard_of_living_index,Media_exposure,Contraceptive_method_used
+42,High-3,Low-2,9,Islam,No,High-3,High-3,Good,No-use
+44,High-4,High-4,1,Islam,Yes,Low-1,High-4,Good,No-use
+48,High-4,High-4,5,Islam,No,Low-1,High-4,Good,Long-term
+32,High-4,High-4,2,Islam,No,Low-2,High-3,Good,Short-term
+49,High-4,High-4,6,Islam,No,Low-1,Low-2,Good,Long-term
+29,Low-2,High-3,1,Islam,No,Low-1,Low-1,Good,No-use
+41,Low-1,High-3,10,Islam,No,Low-2,High-3,Not good,Long-term
+45,High-4,High-4,1,Islam,Yes,High-3,High-3,Good,Short-term
+43,Low-1,High-3,2,Islam,Yes,Low-2,Low-2,Not good,No-use
+32,High-4,High-4,1,Islam,Yes,Low-1,High-3,Good,Long-term
+26,High-4,High-4,1,Islam,No,Low-1,High-4,Good,Short-term
+48,Low-2,Low-1,3,Islam,Yes,High-4,High-3,Good,No-use
+30,Low-1,Low-1,5,Islam,No,Low-2,Low-2,Good,Long-term
+42,High-3,Low-2,1,Islam,No,High-3,High-3,Good,No-use
+27,Low-2,High-3,1,Islam,Yes,High-3,Low-2,Good,Short-term
+48,Low-1,High-3,4,Islam,No,High-3,High-3,Not good,No-use
+28,High-3,High-4,1,Islam,No,High-3,Low-2,Good,Long-term
+23,Low-2,High-4,4,Islam,No,High-3,High-3,Good,Short-term
+44,Low-1,Low-2,2,Islam,No,Low-2,High-4,Good,Long-term
+25,High-4,High-4,1,Non-Islam,No,Low-2,High-3,Good,No-use

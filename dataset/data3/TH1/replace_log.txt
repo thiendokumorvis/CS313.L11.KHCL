@@ -1,0 +1,8 @@
+Wife's_age	2	26.4
+Husband's_education	3	high-4
+Number_of_children_ever_born	1	2.6
+Wife's_now_working?	3	No
+Husband's_occupation	1	High-3
+Standard_of_living_index	2	High-3
+Media_exposure	1	Good
+Contraceptive_method_used	1	No-use

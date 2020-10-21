@@ -1,0 +1,21 @@
+Wife's_age,Wife's_education,Husband's_education,Number_of_children_ever_born,Wife's_religion,Wife's_now_working?,Husband's_occupation,Standard_of_living_index,Media_exposure,Contraceptive_method_used
+0.5297645600994275,High-3,Low-2,2.225562954669587,Islam,No,High-3,High-3,Good,No-use
+0.7551962878013114,High-4,High-4,-0.7667905978273366,Islam,Yes,Low-1,High-4,Good,No-use
+1.2060597432050792,High-4,High-4,0.7293861784211252,Islam,No,Low-1,High-4,Good,Long-term
+-0.597394078409992,High-4,High-4,-0.3927464037652212,Islam,No,Low-2,High-3,Good,Short-term
+1.3187756070560213,High-4,High-4,1.1034303724832406,Islam,No,Low-1,Low-2,Good,Long-term
+-0.9355416699628178,Low-2,High-3,-0.7667905978273366,Islam,No,Low-1,Low-1,Good,No-use
+0.41704869624848556,Low-1,High-3,2.5996071487317023,Islam,No,Low-2,High-3,Not good,Long-term
+0.8679121516522533,High-4,High-4,-0.7667905978273366,Islam,Yes,High-3,High-3,Good,Short-term
+0.6424804239503694,Low-1,High-3,-0.3927464037652212,Islam,Yes,Low-2,Low-2,Not good,No-use
+-0.597394078409992,High-4,High-4,-0.7667905978273366,Islam,Yes,Low-1,High-3,Good,Long-term
+-1.2736892615156437,High-4,High-4,-0.7667905978273366,Islam,No,Low-1,High-4,Good,Short-term
+1.2060597432050792,Low-2,Low-1,-0.018702209703105706,Islam,Yes,High-4,High-3,Good,No-use
+-0.822825806111876,Low-1,Low-1,0.7293861784211252,Islam,No,Low-2,Low-2,Good,Long-term
+0.5297645600994275,High-3,Low-2,-0.7667905978273366,Islam,No,High-3,High-3,Good,No-use
+-1.1609733976647019,Low-2,High-3,-0.7667905978273366,Islam,Yes,High-3,Low-2,Good,Short-term
+1.2060597432050792,Low-1,High-3,0.35534198435900977,Islam,No,High-3,High-3,Not good,No-use
+-1.0482575338137599,High-3,High-4,-0.7667905978273366,Islam,No,High-3,Low-2,Good,Long-term
+-1.6118368530684697,Low-2,High-4,0.35534198435900977,Islam,No,High-3,High-3,Good,Short-term
+0.7551962878013114,Low-1,Low-2,-0.3927464037652212,Islam,No,Low-2,High-4,Good,Long-term
+-1.3864051253665857,High-4,High-4,-0.7667905978273366,Non-Islam,No,Low-2,High-3,Good,No-use

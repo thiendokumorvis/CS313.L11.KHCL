@@ -1,0 +1,101 @@
+Wife's_age,Wife's_education,Husband's_education,Number_of_children_ever_born,Wife's_religion,Wife's_now_working?,Husband's_occupation,Standard_of_living_index,Media_exposure,Contraceptive_method_used
+-1.0967936109988579,Low-2,High-3,-0.17507524381296335,Islam,No,Low-2,High-3,Good,No-use
+1.406757022802882,Low-1,High-3,2.8887415229138957,Islam,No,High-3,High-4,Good,No-use
+1.1683236291074783,Low-2,High-3,1.5756771943166705,Islam,No,High-3,High-4,Good,No-use
+1.0491069322597764,High-3,Low-2,2.451053413381487,Islam,No,High-3,High-3,Good,No-use
+0.333806751173565,High-3,High-3,2.0133653038490786,Islam,No,High-3,Low-2,Good,No-use
+-1.6928770952373675,High-4,High-4,-1.4881395724101887,Islam,No,High-3,High-3,Good,No-use
+0.5722401448689688,Low-2,High-3,1.137989084784262,Islam,No,High-3,Low-2,Good,No-use
+-1.4544437015419636,High-3,High-3,-1.0504514628777804,Islam,Yes,High-3,Low-2,Good,No-use
+-0.7391435204557522,Low-2,High-3,-0.17507524381296335,Islam,No,High-3,High-4,Good,No-use
+1.406757022802882,Low-1,Low-1,2.0133653038490786,Islam,No,Low-2,Low-2,Not good,No-use
+0.5722401448689688,Low-1,High-3,-0.6127633533453718,Islam,Yes,High-3,High-3,Not good,No-use
+1.0491069322597764,Low-1,High-4,0.26261286571944514,Islam,No,Low-1,High-3,Good,No-use
+1.2875403259551803,High-4,High-4,-1.0504514628777804,Islam,Yes,Low-1,High-4,Good,No-use
+1.0491069322597764,Low-2,High-4,-1.0504514628777804,Islam,Yes,High-3,High-3,Good,No-use
+0.09537335747816118,High-4,High-4,-0.6127633533453718,Non-Islam,No,Low-1,High-4,Good,No-use
+0.09537335747816118,High-4,High-4,-0.6127633533453718,Islam,Yes,Low-1,High-3,Good,No-use
+-1.2160103078465598,High-4,High-4,-0.6127633533453718,Islam,No,Low-1,High-4,Good,No-use
+-0.7391435204557522,High-4,High-4,-1.0504514628777804,Islam,No,Low-1,Low-2,Good,No-use
+1.525973719650584,High-3,Low-2,3.3264296324463043,Islam,Yes,Low-2,Low-2,Not good,No-use
+0.09537335747816118,High-4,High-4,-0.17507524381296335,Non-Islam,No,Low-1,Low-2,Good,No-use
+-0.02384333936954072,High-4,High-4,0.7003009752518536,Islam,No,High-3,High-3,Good,No-use
+-0.977576914151156,High-3,High-3,-1.0504514628777804,Islam,No,High-3,Low-2,Good,No-use
+-0.858360217303454,High-4,High-4,-1.0504514628777804,Islam,Yes,Low-1,High-4,Good,No-use
+1.764407113345988,Low-1,High-3,0.26261286571944514,Islam,No,High-3,High-3,Not good,No-use
+0.333806751173565,High-4,High-4,-0.6127633533453718,Islam,No,High-3,High-3,Good,No-use
+0.5722401448689688,High-3,High-4,-0.6127633533453718,Non-Islam,No,Low-2,High-4,Good,No-use
+1.2875403259551803,Low-1,Low-2,1.5756771943166705,Islam,No,High-3,High-4,Good,No-use
+1.2875403259551803,Low-2,Low-2,-1.0504514628777804,Islam,Yes,High-3,Low-2,Good,No-use
+0.6914568417166708,High-3,High-3,-1.0504514628777804,Non-Islam,No,High-3,High-4,Good,No-use
+1.1683236291074783,High-4,High-4,-0.17507524381296335,Non-Islam,No,Low-1,High-4,Good,Long-term
+0.2145900543258631,High-4,High-4,-0.17507524381296335,Islam,No,Low-2,High-3,Good,Long-term
+-1.0967936109988579,High-4,High-4,-0.6127633533453718,Islam,Yes,Low-1,High-3,Good,Long-term
+1.1683236291074783,High-4,High-4,1.137989084784262,Islam,No,Low-1,High-4,Good,Long-term
+1.764407113345988,High-4,High-4,1.5756771943166705,Non-Islam,No,Low-1,High-4,Good,Long-term
+-0.6199268236080503,High-4,High-4,-0.6127633533453718,Islam,No,Low-1,High-3,Good,Long-term
+-1.0967936109988579,High-4,High-4,-1.0504514628777804,Islam,No,Low-1,High-4,Good,Long-term
+1.0491069322597764,High-4,High-4,-0.17507524381296335,Islam,Yes,Low-1,High-4,Good,Long-term
+0.6914568417166708,High-4,High-4,-0.17507524381296335,Islam,No,Low-1,High-4,Good,Long-term
+-1.0967936109988579,High-4,High-4,-1.0504514628777804,Islam,No,Low-1,High-4,Good,Long-term
+-0.02384333936954072,High-4,High-3,0.7003009752518536,Islam,No,Low-2,High-4,Good,Long-term
+-0.5007101267603483,High-4,High-4,-0.6127633533453718,Islam,No,High-3,High-4,Good,Long-term
+-0.858360217303454,High-3,High-4,-0.6127633533453718,Islam,No,Low-1,High-3,Good,Short-term
+-0.977576914151156,High-3,High-3,-0.17507524381296335,Islam,No,High-3,High-3,Good,Short-term
+0.2145900543258631,High-4,High-4,-0.17507524381296335,Islam,No,Low-1,High-4,Good,Short-term
+-1.3352270046942616,High-4,High-4,-1.0504514628777804,Islam,Yes,Low-2,High-4,Good,Short-term
+-1.6928770952373675,High-4,High-4,-1.0504514628777804,Islam,No,Low-2,High-4,Good,Short-term
+-0.5007101267603483,Low-2,High-3,0.7003009752518536,Islam,No,Low-2,High-4,Good,Short-term
+-1.4544437015419636,High-3,High-4,-0.6127633533453718,Islam,No,High-3,High-3,Good,Short-term
+-1.4544437015419636,High-3,High-3,-1.0504514628777804,Islam,No,High-3,High-3,Good,Short-term
+0.9298902354120745,Low-1,High-4,2.451053413381487,Islam,No,Low-2,Low-1,Good,Short-term
+0.45302344802126693,Low-2,High-4,-0.17507524381296335,Islam,No,Low-2,High-3,Good,Short-term
+-0.7391435204557522,High-4,High-4,-0.17507524381296335,Islam,No,High-3,High-4,Not good,Short-term
+-0.858360217303454,Low-2,High-3,-0.6127633533453718,Islam,No,Low-2,High-3,Good,Short-term
+0.45302344802126693,High-4,High-4,1.137989084784262,Islam,Yes,High-3,High-4,Good,Short-term
+-0.977576914151156,High-3,High-3,-0.17507524381296335,Islam,No,Low-2,Low-1,Good,Short-term
+-0.14306003621724261,High-4,High-3,-0.17507524381296335,Islam,No,Low-2,High-4,Good,Short-term
+0.09537335747816118,Low-1,High-4,0.26261286571944514,Islam,No,High-3,High-4,Not good,Short-term
+-1.2160103078465598,High-4,High-4,-0.6127633533453718,Islam,Yes,Low-2,High-4,Good,Short-term
+-0.6199268236080503,High-3,High-4,-0.6127633533453718,Islam,No,High-3,High-4,Good,Short-term
+-0.38149342991264645,High-3,High-3,0.26261286571944514,Islam,Yes,Low-2,Low-2,Good,Short-term
+-0.26227673306494453,High-4,High-4,-0.17507524381296335,Islam,Yes,Low-1,High-4,Good,Short-term
+0.2145900543258631,High-3,High-4,0.7003009752518536,Islam,No,Low-1,High-4,Good,Short-term
+0.5722401448689688,High-4,High-4,-0.6127633533453718,Islam,No,High-3,High-4,Good,Short-term
+-0.26227673306494453,High-4,High-4,-1.0504514628777804,Islam,No,Low-1,High-4,Good,Short-term
+-0.977576914151156,High-4,High-4,-0.6127633533453718,Islam,No,Low-2,High-4,Good,Short-term
+-0.38149342991264645,High-4,High-4,-0.6127633533453718,Islam,No,Low-1,High-4,Good,Short-term
+-1.3352270046942616,Low-1,Low-2,-0.6127633533453718,Islam,No,High-3,High-4,Good,Short-term
+-0.26227673306494453,High-4,High-4,-0.17507524381296335,Islam,No,Low-1,High-4,Good,Short-term
+-0.5007101267603483,High-4,High-4,-0.17507524381296335,Islam,No,High-3,High-4,Good,Short-term
+-0.5007101267603483,Low-2,High-3,-0.17507524381296335,Islam,Yes,High-3,Low-2,Good,Short-term
+0.5722401448689688,High-4,High-4,-0.17507524381296335,Non-Islam,Yes,High-3,High-3,Not good,Short-term
+-1.3352270046942616,High-3,High-4,-0.6127633533453718,Islam,No,Low-2,High-4,Good,Short-term
+1.406757022802882,High-4,High-4,-0.17507524381296335,Islam,No,Low-1,High-4,Good,Short-term
+-0.858360217303454,High-3,High-4,-0.17507524381296335,Islam,No,High-3,Low-2,Good,Short-term
+-1.5736603983896655,High-4,High-4,-1.4881395724101887,Non-Islam,Yes,Low-2,High-4,Good,No-use
+-0.26227673306494453,High-3,High-4,-0.17507524381296335,Non-Islam,Yes,Low-2,High-4,Good,No-use
+0.333806751173565,High-3,High-3,-0.17507524381296335,Non-Islam,Yes,Low-2,High-3,Not good,No-use
+1.645190416498286,High-3,Low-2,0.7003009752518536,Islam,No,High-4,High-4,Good,No-use
+1.1683236291074783,High-3,High-4,-0.6127633533453718,Non-Islam,No,High-3,High-4,Good,No-use
+-1.5736603983896655,High-3,High-4,-1.4881395724101887,Islam,No,High-3,High-3,Good,No-use
+-1.0967936109988579,High-4,High-4,0.26261286571944514,Islam,No,Low-1,High-4,Good,No-use
+-0.02384333936954072,Low-2,Low-2,-0.17507524381296335,Non-Islam,Yes,Low-2,High-4,Good,No-use
+0.9298902354120745,High-3,High-4,-0.17507524381296335,Non-Islam,No,Low-2,High-4,Good,No-use
+1.764407113345988,High-3,High-4,0.26261286571944514,Non-Islam,No,Low-2,High-4,Good,No-use
+-0.14306003621724261,High-4,High-4,-1.0504514628777804,Non-Islam,No,Low-1,High-4,Good,No-use
+0.5722401448689688,High-3,High-3,0.26261286571944514,Non-Islam,Yes,High-3,Low-2,Not good,No-use
+1.764407113345988,High-3,High-4,2.0133653038490786,Islam,No,High-3,High-3,Good,No-use
+0.09537335747816118,Low-1,High-3,0.26261286571944514,Islam,Yes,High-3,High-4,Good,No-use
+-0.26227673306494453,Low-1,Low-1,1.137989084784262,Islam,No,High-3,Low-2,Good,No-use
+1.525973719650584,Low-1,Low-2,1.5756771943166705,Islam,No,High-3,Low-1,Not good,No-use
+1.406757022802882,Low-2,Low-2,1.5756771943166705,Islam,No,High-3,Low-1,Not good,No-use
+-0.38149342991264645,Low-2,High-3,1.5756771943166705,Islam,No,High-3,High-3,Good,Short-term
+-1.9313104889327712,High-3,High-4,-1.0504514628777804,Islam,No,High-3,High-3,Good,Short-term
+-0.14306003621724261,Low-2,High-4,-0.17507524381296335,Islam,No,High-3,High-4,Good,Short-term
+1.1683236291074783,High-4,High-4,0.7003009752518536,Non-Islam,No,Low-1,High-4,Good,Short-term
+-0.26227673306494453,Low-2,Low-2,0.26261286571944514,Islam,No,High-3,High-3,Good,Short-term
+-1.0967936109988579,Low-1,Low-2,-0.17507524381296335,Islam,No,High-3,Low-2,Good,Short-term
+-0.858360217303454,Low-2,High-4,-0.17507524381296335,Islam,No,Low-1,High-3,Good,Short-term
+0.2145900543258631,High-3,High-4,0.26261286571944514,Islam,Yes,Low-1,High-4,Good,Short-term
+1.525973719650584,High-3,High-4,0.26261286571944514,Islam,Yes,High-3,High-4,Good,Short-term

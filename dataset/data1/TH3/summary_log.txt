@@ -1,0 +1,10 @@
+100
+8
+temperature_of_patient	numeric
+occurrence_of_nausea	nominal
+lumbar_pain	nominal
+urine_pushing	nominal
+micturition_pains	nominal
+burning_of_urethra_itch_swelling_of_urethra_outlet	nominal
+decision_inflammation_of_urinary_bladder	nominal
+decision_nephritis_of_renal_pelvis_origin 	nominal
