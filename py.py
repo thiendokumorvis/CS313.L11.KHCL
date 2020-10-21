@@ -161,7 +161,7 @@ elif args.discretize:
 elif args.normalize:
     df = pd.read_csv(args.input)
     print('1: Z-score \n2: Min-max')
-    choice = input.strip()
+    choice = input().strip()
     if choice == '1':
       temp = normalize_data_w_z_score(df, args.output, args.log)
     elif choice == '2':
