@@ -64,6 +64,7 @@ def fill_data(self):
   return log, data
 
 # Functions
+
 # Summary
 def summarize_data(self, log_path):
   types = get_features_type(self)
@@ -73,17 +74,20 @@ def summarize_data(self, log_path):
   log_file = open(log_path, "w+")
   log_file.write(log)
   log_file.close()
+
 # Replace
-def replace_data(self, log_path, output_path):
+def replace_data(self, output_path, log_path):
   log, data = fill_data(self)
   log_file = open(log_path, "w+")
   log_file.write(log)
   log_file.close()
   data.to_csv(output_path, index = False)
+
 # Normalize
 def normalize_z_score(self):
   data = self.copy()
   N = data.shape[0]
+  log = ''
   features_type = get_features_type(data)
   for i in range(data.shape[1]):
     if features_type[i] == 'numeric':
@@ -97,11 +101,13 @@ def normalize_z_score(self):
       variance = math.sqrt(variance / N)
       for j in range(N):
         data.iloc[j, i] = ((data.iloc[j, i]) - avg) / variance
-  # return dataframe
-  return data
+      log = log + str(data.columns[i]) + '\t' + str(min(list(data.iloc[:, i].values))) + '\t' + str(max(list(data.iloc[:, i].values))) + '\n'
+  # return log, dataframe
+  return log, data
 
 def normalize_minmax(self):
   data = self.copy()
+  log = ''
   features_type = get_features_type(data)
   for i in range(data.shape[1]):
     if features_type[i] == 'numeric':
@@ -109,11 +115,25 @@ def normalize_minmax(self):
       maxA = max(list(data.iloc[:, i].values))
       for j in range(data.shape[0]):
         data.iloc[j, i] = (data.iloc[j, i] - minA) / (maxA - minA)
-  # return dataframe
-  return data
+      log = log + str(data.columns[i]) + '\t' + str(min(list(data.iloc[:, i].values))) + '\t' + str(max(list(data.iloc[:, i].values))) + '\n'
+  # return log, dataframe
+  return log, data
+
+def normalize_data_w_z_score(self, output_path, log_path):
+  log, data = normalize_z_score(self)
+  log_file = open(log_path, "w+")
+  log_file.write(log)
+  log_file.close()
+  data.to_csv(output_path, index = False)
+
+def normalize_data_w_minmax(self, output_path, log_path):
+  log, data = normalize_minmax(self)
+  log_file = open(log_path, "w+")
+  log_file.write(log)
+  log_file.close()
+  data.to_csv(output_path, index = False)
 
 # Save normalized dataframe: pd.read_csv('output_path')
-
 parser = argparse.ArgumentParser(description="Bai TH 1")
 group = parser.add_mutually_exclusive_group()
 group.add_argument("-v", "--verbose", action="store_true")
@@ -130,13 +150,20 @@ args = parser.parse_args()
 if args.verbose:
     print("input file name: {} \noutput file name: {} \nlog file name: {}".format(args.input, args.output, args.log))
 elif args.summary:
-    print(0)
+    df = pd.read_csv(args.input)
+    summarize_data(df, args.log)
 elif args.replace:
     df = pd.read_csv(args.input)
     df.iloc[:, 0]
-    replace_data(df, args.log, args.output)
+    replace_data(df, args.output, args.log)
 elif args.discretize:
     print(0)
 elif args.normalize:
-    print(0)
+    df = pd.read_csv(args.input)
+    print('1: Z-score \n2: Min-max')
+    choice = input.strip()
+    if choice == '1':
+      temp = normalize_data_w_z_score(df, args.output, args.log)
+    elif choice == '2':
+      temp = normalize_data_w_minmax(df, args.output, args.log)
 
