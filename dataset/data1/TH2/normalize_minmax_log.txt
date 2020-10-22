@@ -1,0 +1,1 @@
+temperature_of_patient	0.0	1.0

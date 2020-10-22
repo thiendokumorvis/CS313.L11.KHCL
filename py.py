@@ -186,13 +186,13 @@ if args.verbose:
 elif args.summary:
     df = pd.read_csv(args.input)
     summarize_data(df, args.log)
-    print('Done, result in: ' + args.log)
+    print('Done \nresult in: ' + args.log)
 
 elif args.replace:
     df = pd.read_csv(args.input)
     df.iloc[:, 0]
     replace_data(df, args.output, args.log)
-    print('Done, result in: ' + args.output + '\nto see changed, go to: ' + args.log)
+    print('Done \nresult in: ' + args.output + '\nto see changed, go to: ' + args.log)
 
 elif args.discretize:
     df = pd.read_csv(args.input)
@@ -200,13 +200,13 @@ elif args.discretize:
     method = input().strip()
     print('input number of bin: ')
     binning = input().strip()
-    if method == '1':
+    #if method == '1':
       # temp = normalize_data_w_z_score(df, args.output, args.log)
-    elif method == '2':
+    #elif method == '2':
       # temp = normalize_data_w_minmax(df, args.output, args.log)
     # data,log = binning_width(df,'zone',2,4)
     output(data,log)
-    print('Done, result in: ' + args.output + '\nto see changed, go to: ' + args.log)
+    print('Done \nresult in: ' + args.output + '\nto see changed, go to: ' + args.log)
 
 elif args.normalize:
     df = pd.read_csv(args.input)
@@ -216,6 +216,6 @@ elif args.normalize:
       temp = normalize_data_w_z_score(df, args.output, args.log)
     elif choice == '2':
       temp = normalize_data_w_minmax(df, args.output, args.log)
-    print('Done, result in: ' + args.output + '\nto see changed, go to: ' + args.log)
+    print('Done \nresult in: ' + args.output + '\nto see changed, go to: ' + args.log)
 
 

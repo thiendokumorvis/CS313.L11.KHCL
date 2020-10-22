@@ -1,0 +1,2 @@
+Wife's_age	0.0	1.0
+Number_of_children_ever_born	0.0	1.0
