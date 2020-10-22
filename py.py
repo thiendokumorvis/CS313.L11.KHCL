@@ -133,6 +133,39 @@ def normalize_data_w_minmax(self, output_path, log_path):
   log_file.close()
   data.to_csv(output_path, index = False)
 
+def binning_width(df,column,numcol,number): # cột cần làm chuẩn để chia theo (column), số thứ tự của cột (numcol) , số giỏ (number)
+  log = 'properties:'
+  data = df.values.tolist()
+  lst = df[column]
+  log = log + column + ','
+  distance = (max(lst)+min(lst))/number
+  temp = distance
+  for k in range(number):
+    for i in range(len(df[column])):
+      if data[i][numcol]>temp:
+        for j in range(i,len(df[column])):
+          if data[j][numcol]<=temp:
+            data[i],data[j] = data[j],data[i]
+    temp += distance
+  temp2 = distance 
+  temp3 = 0
+  for k in range(number): 
+    count = 0
+    for i in range(len(lst)):
+      if data[i][numcol]<=temp2 and data[i][numcol]>temp3:
+        data[i][numcol] = temp2
+        count+=1
+    log = log + str(temp2) + ':' +str(count) + ','
+    temp2 += distance
+    temp3 +=distance
+  return pd.DataFrame(data),log
+
+def output(data,log):
+  data.to_csv(r'/content/drive/My Drive/CS313/clear.csv', index = False)
+  text_file = open('/content/drive/My Drive/CS313/clear.txt', "w")
+  n = text_file.write(log)
+  text_file.close()
+
 # Save normalized dataframe: pd.read_csv('output_path')
 parser = argparse.ArgumentParser(description="Bai TH 1")
 group = parser.add_mutually_exclusive_group()
@@ -149,21 +182,40 @@ args = parser.parse_args()
 
 if args.verbose:
     print("input file name: {} \noutput file name: {} \nlog file name: {}".format(args.input, args.output, args.log))
+    
 elif args.summary:
     df = pd.read_csv(args.input)
     summarize_data(df, args.log)
+    print('Done, result in: ' + args.log)
+
 elif args.replace:
     df = pd.read_csv(args.input)
     df.iloc[:, 0]
     replace_data(df, args.output, args.log)
+    print('Done, result in: ' + args.output + '\nto see changed, go to: ' + args.log)
+
 elif args.discretize:
-    print(0)
+    df = pd.read_csv(args.input)
+    print('Choose method: \n1: Binning width \n2: Binning depth')
+    method = input().strip()
+    print('input number of bin: ')
+    binning = input().strip()
+    if method == '1':
+      # temp = normalize_data_w_z_score(df, args.output, args.log)
+    elif method == '2':
+      # temp = normalize_data_w_minmax(df, args.output, args.log)
+    # data,log = binning_width(df,'zone',2,4)
+    output(data,log)
+    print('Done, result in: ' + args.output + '\nto see changed, go to: ' + args.log)
+
 elif args.normalize:
     df = pd.read_csv(args.input)
-    print('1: Z-score \n2: Min-max')
+    print('Choose method: \n1: Z-score \n2: Min-max')
     choice = input().strip()
     if choice == '1':
       temp = normalize_data_w_z_score(df, args.output, args.log)
     elif choice == '2':
       temp = normalize_data_w_minmax(df, args.output, args.log)
+    print('Done, result in: ' + args.output + '\nto see changed, go to: ' + args.log)
+
 
