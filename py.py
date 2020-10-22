@@ -133,8 +133,10 @@ def normalize_data_w_minmax(self, output_path, log_path):
   log_file.close()
   data.to_csv(output_path, index = False)
 
-def binning_width(df,column,numcol,number): # cột cần làm chuẩn để chia theo (column), số thứ tự của cột (numcol) , số giỏ (number)
+def binning_width(df,column,number): # cột cần làm chuẩn để chia theo (column), số thứ tự của cột (numcol) , số giỏ (number)
   log = 'properties:'
+  propertieslist = list(df.columns)
+  numcol = propertieslist.index(column)
   data = df.values.tolist()
   lst = df[column]
   log = log + column + ','
@@ -160,11 +162,40 @@ def binning_width(df,column,numcol,number): # cột cần làm chuẩn để chi
     temp3 +=distance
   return pd.DataFrame(data),log
 
-def output(data,log):
-  data.to_csv(r'/content/drive/My Drive/CS313/clear.csv', index = False)
-  text_file = open('/content/drive/My Drive/CS313/clear.txt', "w")
-  n = text_file.write(log)
-  text_file.close()
+def binning_depth(df,column,number): # cột cần làm chuẩn để sắp xếp (column), số giỏ (number)
+  data1 = df.sort_values(column)
+  propertieslist = list(df.columns)
+  numcol = propertieslist.index(column)
+  log = 'properties:' + column +','
+  data = data1.values.tolist()
+  lst = df[column]
+  distance = int(len(lst)/number+1)
+  for i in range(number):
+    if i == number-1:
+      log = log + str(i) + ':' + str(len(lst)-i*distance)
+      for j in range(len(lst)-i*distance):
+        data[i*distance+j][numcol] = i+1
+    else:
+      log = log + str(i+1) + ':' + str(distance) + ','
+      for j in range(distance):
+        data[i*distance+j][numcol] = i+1
+  return pd.DataFrame(data),log
+
+def output(data,log, output_path, log_path):
+  data.to_csv(output_path, index = False)
+  log_file = open(log_path, "w")
+  log_file.write(log)
+  log_file.close()
+
+def binning(df,column,number,types, output_path, log_path):
+  if types=='1':
+    data,log = binning_width(df,column,number)
+    output(data,log, output_path, log_path)
+  elif types=='2':
+    data,log = binning_depth(df,column,number)
+    output(data,log, output_path, log_path)
+  else:
+    print("Error types")
 
 # Save normalized dataframe: pd.read_csv('output_path')
 parser = argparse.ArgumentParser(description="Bai TH 1")
@@ -196,16 +227,11 @@ elif args.replace:
 
 elif args.discretize:
     df = pd.read_csv(args.input)
+    prop = input('Input property: ')
+    numbin = int(input('Input number of bin: '))
     print('Choose method: \n1: Binning width \n2: Binning depth')
     method = input().strip()
-    print('input number of bin: ')
-    binning = input().strip()
-    #if method == '1':
-      # temp = normalize_data_w_z_score(df, args.output, args.log)
-    #elif method == '2':
-      # temp = normalize_data_w_minmax(df, args.output, args.log)
-    # data,log = binning_width(df,'zone',2,4)
-    output(data,log)
+    binning(df, prop, numbin, method, args.output, args.log)
     print('Done \nresult in: ' + args.output + '\nto see changed, go to: ' + args.log)
 
 elif args.normalize:
