@@ -133,8 +133,10 @@ def normalize_data_w_minmax(self, output_path, log_path):
   log_file.close()
   data.to_csv(output_path, index = False)
 
-def binning_width(df,column,number): # cột cần làm chuẩn để chia theo (column), số thứ tự của cột (numcol) , số giỏ (number)
+def binning_width(df,column,number,thaythe): # cột cần làm chuẩn để chia theo (column), số thứ tự của cột (numcol) , số giỏ (number)
   log = 'properties:'
+  lst_2 =[]
+  lst_3 =[]
   propertieslist = list(df.columns)
   numcol = propertieslist.index(column)
   data = df.values.tolist()
@@ -151,34 +153,85 @@ def binning_width(df,column,number): # cột cần làm chuẩn để chia theo 
     temp += distance
   temp2 = distance 
   temp3 = 0
+  lstcount = []
   for k in range(number): 
     count = 0
+    lst_1 = []
     for i in range(len(lst)):
       if data[i][numcol]<=temp2 and data[i][numcol]>temp3:
-        data[i][numcol] = temp2
+        lst_1.append(data[i][numcol])
         count+=1
+    lst_2.append((max(lst_1)+min(lst_1))/2)
+    lstcount.append(count)
     log = log + str(temp2) + ':' +str(count) + ','
     temp2 += distance
     temp3 +=distance
+  temp4 = distance
+  temp5 =0
+  for k in range(number):
+    csd=0
+    for i in range(lstcount[k]):
+      if i==0 or i==lstcount[k]-1:
+        for j in range(k-1):
+          if k-1!=-1:
+            csd+= lstcount[j]
+        lst_3.append(data[csd+i][numcol])
+  for k in range(number):
+    if thaythe ==1:
+      for i in range(len(lst)):
+        if data[i][numcol] <= temp4 and data[i][numcol]>temp5:
+            data[i][numcol] = lst_2[k]
+    elif thaythe ==2:
+      cdf=0
+      for i in range(lstcount[k]):
+        if data[i+cdf][numcol]-lst_3[k]>=lst_3[k+1]-data[i+cdf][numcol]:
+          data[i+cdf][numcol] = lst_3[k+1]
+        else:
+          data[i+cdf][numcol] = lst_3[k]
+      cdf+=lstcount[k]
+    temp4 +=distance
+    temp5 +=distance
   return pd.DataFrame(data),log
-
-def binning_depth(df,column,number): # cột cần làm chuẩn để sắp xếp (column), số giỏ (number)
+def binning_depth(df,column,number,thaythe): # cột cần làm chuẩn để sắp xếp (column), số giỏ (number)
   data1 = df.sort_values(column)
   propertieslist = list(df.columns)
   numcol = propertieslist.index(column)
+  lst_2 = []
+  lst_3 = []
   log = 'properties:' + column +','
   data = data1.values.tolist()
   lst = df[column]
   distance = int(len(lst)/number+1)
   for i in range(number):
+    lst_1 = []
     if i == number-1:
       log = log + str(i) + ':' + str(len(lst)-i*distance)
       for j in range(len(lst)-i*distance):
-        data[i*distance+j][numcol] = i+1
+        lst_1.append(data[i*distance+j][numcol])
+        if j==0 or j==len(lst)-i*distance-1:
+          lst_3.append(data[i*distance+j][numcol])
     else:
       log = log + str(i+1) + ':' + str(distance) + ','
       for j in range(distance):
-        data[i*distance+j][numcol] = i+1
+        lst_1.append(data[i*distance+j][numcol])
+        if j==0 or j==len(lst)-i*distance-1:
+          lst_3.append(data[i*distance+j][numcol])
+    lst_2.append((max(lst_1)+min(lst_1))/2)
+  temp2 =distance
+  temp3 =0
+  for i in range(number):
+    for j in range(len(lst)-i*distance):
+      # if data[i*distance+j][numcol] <= temp2 and data[i*distance+j][numcol]>temp3:
+      if thaythe == 1:
+        data[i*distance+j][numcol] = lst_2[i]
+      elif thaythe == 2:
+        if data[i*distance+j][numcol] <= temp2 and data[i*distance+j][numcol]>temp3:
+          if data[i*distance+j][numcol]-lst_3[i]>=lst_3[i+1]-data[i*distance+j][numcol]:
+            data[i*distance+j][numcol] = lst_3[i+1]
+          else:
+            data[i*distance+j][numcol] = lst_3[i]
+    temp2 +=distance
+    temp3 +=distance
   return pd.DataFrame(data),log
 
 def output(data,log, output_path, log_path):
@@ -187,12 +240,12 @@ def output(data,log, output_path, log_path):
   log_file.write(log)
   log_file.close()
 
-def binning(df,column,number,types, output_path, log_path):
+def binning(df,column,number,types,thaythe, output_path, log_path):
   if types=='1':
-    data,log = binning_width(df,column,number)
+    data,log = binning_width(df,column,number,thaythe)
     output(data,log, output_path, log_path)
   elif types=='2':
-    data,log = binning_depth(df,column,number)
+    data,log = binning_depth(df,column,number,thaythe)
     output(data,log, output_path, log_path)
   else:
     print("Error types")
@@ -227,11 +280,13 @@ elif args.replace:
 
 elif args.discretize:
     df = pd.read_csv(args.input)
-    prop = input('Input property: ')
-    numbin = int(input('Input number of bin: '))
+    prop = input('Enter property: ')
+    numbin = int(input('Enter number of bin: '))
     print('Choose method: \n1: Binning width \n2: Binning depth')
     method = input().strip()
-    binning(df, prop, numbin, method, args.output, args.log)
+    print('Choose smooth type: \n1: Median smoothing \n2: marginal smoothing')
+    smooth = int(input())
+    binning(df, prop, numbin, method, smooth, args.output, args.log)
     print('Done \nresult in: ' + args.output + '\nto see changed, go to: ' + args.log)
 
 elif args.normalize:
@@ -243,5 +298,3 @@ elif args.normalize:
     elif choice == '2':
       temp = normalize_data_w_minmax(df, args.output, args.log)
     print('Done \nresult in: ' + args.output + '\nto see changed, go to: ' + args.log)
-
-
