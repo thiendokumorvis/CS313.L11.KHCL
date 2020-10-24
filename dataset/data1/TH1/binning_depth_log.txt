@@ -1,0 +1,1 @@
+properties:temperature_of_patient,1:6,2:6,3:6,3:2

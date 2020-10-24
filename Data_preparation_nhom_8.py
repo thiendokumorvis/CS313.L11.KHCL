@@ -251,7 +251,7 @@ def binning(df,column,number,types,thaythe, output_path, log_path):
     print("Error types")
 
 # Save normalized dataframe: pd.read_csv('output_path')
-parser = argparse.ArgumentParser(description="Bai TH 1")
+parser = argparse.ArgumentParser(description="Bai TH 1 nhom 8")
 group = parser.add_mutually_exclusive_group()
 group.add_argument("-v", "--verbose", action="store_true")
 group.add_argument("-s", "--summary", action="store_true")
