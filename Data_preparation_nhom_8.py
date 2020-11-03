@@ -133,7 +133,7 @@ def normalize_data_w_minmax(self, output_path, log_path):
   log_file.close()
   data.to_csv(output_path, index = False)
 
-def binning_width(df,column,number,thaythe): # cột cần làm chuẩn để chia theo (column), số thứ tự của cột (numcol) , số giỏ (number)
+def binning_width(df,column,number,thaythe):
   log = 'properties:'
   lst_2 =[]
   lst_3 =[]
@@ -192,7 +192,7 @@ def binning_width(df,column,number,thaythe): # cột cần làm chuẩn để ch
     temp4 +=distance
     temp5 +=distance
   return pd.DataFrame(data),log
-def binning_depth(df,column,number,thaythe): # cột cần làm chuẩn để sắp xếp (column), số giỏ (number)
+def binning_depth(df,column,number,thaythe):
   data1 = df.sort_values(column)
   propertieslist = list(df.columns)
   numcol = propertieslist.index(column)
